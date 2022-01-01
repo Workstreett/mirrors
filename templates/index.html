@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,100&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Mirrors</title>
+		<style>
+			:root {
+				--font-size: 25px;
+			}
+			@media all and (max-width: 500px) {
+				:root {
+					--font-size: 15px;
+				}
+			}
+			body {
+				background-color: #fff;
+				font-family: monospace;
+				-webkit-font-smoothing: antialiased;
+				color: #37556a;
+			}
+			.app {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 90vh;
+				text-align: center;
+			}
+			.Heading {
+				font-size: calc(3 * var(--font-size));
+				font-weight: 100;
+				font-family: Lato;
+				margin: 30px 0;
+			}
+			.content {
+				font-size: var(--font-size);
+				font-weight: 200;
+				line-height: 1.25em;
+				max-width: 550px;
+				margin: 20px auto;
+			}
+			.link {
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="app">
+			<div>
+				<h1 class="Heading">Welcome, Students</h1>
+				<p class="content">
+					This is the backend api for the interactive status portal
+					used to remove the bridge between us.
+				</p>
+				<a href="https://github.com/Workstreett/mirrors" class="link"
+					>Documentation</a
+				>
+			</div>
+		</div>
+	</body>
+</html>

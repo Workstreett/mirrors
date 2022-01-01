@@ -10,6 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // all routers
+app.get("/", (req, res) => {
+	res.sendFile(__dirname + "/templates/index.html");
+});
 
 // The server
 console.log("The server is up and running");
