@@ -7,7 +7,6 @@ const Authenticate = (req, res, next) => {
 			console.log("Error in file user.js", err.message);
 			res.send("Unauthorised");
 		}
-		console.log(payload);
 		req.user = { id: payload.sub };
 		next();
 	});

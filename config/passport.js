@@ -28,14 +28,19 @@ passport.use(
 			User.findOne(
 				{ email: profile.emails[0].value },
 				async (err, user) => {
-					if (user) {
-						user.userImg = profile.photos[0].value;
+					try {
+						if (user) {
+							user.userImg = profile.photos[0].value;
+							await user.save();
+						}
+						if (err) {
+							console.log(err.message);
+						}
+						next(null, user);
+					} catch (error) {
+						console.log("called!");
+						next(error, {});
 					}
-					await user.save();
-					if (err) {
-						console.log(err.message);
-					}
-					next(null, user);
 				}
 			);
 		}

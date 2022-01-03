@@ -17,8 +17,6 @@
 		"jsonwebtoken": "^8.5.1",
 		"mongoose": "^6.1.4",
 		"passport": "^0.5.2",
-		"passport-google-oauth20": "^2.0.0",
-		"passport-google-plus": "^0.5.1",
 		"passport-google-plus-token": "^2.1.0"
 	},
 	"devDependencies": {
