@@ -8,10 +8,16 @@ const User = new Schema({
 	appliedFor: [
 		{
 			companyId: mongoose.Types.ObjectId,
-			status: [String],
-			round: [String],
-			remarks: [String],
-			roundDate: [Date],
+			status: String,
+			round: [
+				{
+					icon: { type: String, default: "fas fas-circle" },
+					name: { type: String, required: true },
+					date: { type: String, default: Date.now() },
+					remark: { type: String, default: "Pending" },
+					status: Boolean,
+				},
+			],
 		},
 	],
 });
