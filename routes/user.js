@@ -20,6 +20,7 @@ router.post("/add/", async (req, res) => {
 		icon: req.body.icon || "fas fa-user",
 		name: req.body.roundName || "Resume Round",
 		status: req.body.status || 0,
+		date: req.body.roundDate,
 		remark: req.body.remark,
 	};
 	const obj = {
