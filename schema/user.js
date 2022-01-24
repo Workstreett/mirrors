@@ -7,13 +7,16 @@ const User = new Schema({
 	userImg: String,
 	appliedFor: [
 		{
-			companyId: mongoose.Types.ObjectId,
-			status: String,
+			companyId: {
+				type: mongoose.Types.ObjectId,
+				required: true,
+			},
+			status: { type: String, default: "Process" },
 			round: [
 				{
 					icon: { type: String, default: "fas fas-circle" },
 					name: { type: String, required: true },
-					date: { type: String, default: Date.now() },
+					date: { type: String, default: new Date().toDateString() },
 					remark: { type: String, default: "Pending" },
 					status: Boolean,
 				},
