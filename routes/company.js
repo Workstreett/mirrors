@@ -9,8 +9,9 @@ router.post("/get/byId", Authenticate, (req, res) => {
 			console.log("Error is in route /company/get/byId ", err.message);
 			res.status(503).send("Server Problem");
 		}
-
-		res.json(data);
+		else{
+			res.json(data);
+		}
 	});
 });
 
@@ -19,8 +20,9 @@ router.post("/get/all", Authenticate, (req, res) => {
 		if (err) {
 			console.log("Error is in route /get/all ", err.message);
 			res.status(503).send("Server Problem");
+		}else{
+			res.json(data);
 		}
-		res.json(data);
 	});
 });
 
