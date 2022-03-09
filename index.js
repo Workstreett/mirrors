@@ -16,7 +16,10 @@ app.use(express.json({ strict: false }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 mongoose
-	.connect(process.env.MONGODB_URI)
+	.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
 	.then((res) => {
 		console.log("Connection secured");
 	})

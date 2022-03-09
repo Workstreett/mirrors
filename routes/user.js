@@ -3,6 +3,7 @@ const router = express.Router();
 
 const User = require("../schema/user");
 const { Authenticate } = require("../middlewares/Auth");
+const TaskRouter = require("./tasks");
 
 router.post("/get/byId", Authenticate, (req, res) => {
 	User.findById(req.user.id, (err, user) => {
@@ -63,5 +64,7 @@ router.post("/add/", async (req, res) => {
 		res.status(503).send("Server Side Error");
 	}
 });
+
+router.use("/tasks", TaskRouter);
 
 module.exports = router;
