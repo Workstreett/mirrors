@@ -7,6 +7,11 @@ const Company = new Schema({
 	logo: String,
 	tnor: { type: Number, alias: "totalNumofRounds" },
 	role: String,
+	apply: String,
+	jd: { type: String, default: "" },
+	duration: String,
+	stipend: String,
+	unavailable: { type: Boolean, default: false },
 });
 
 module.exports = mongoose.model("company", Company);
